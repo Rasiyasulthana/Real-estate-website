@@ -1,0 +1,142 @@
+/* Only the custom parts - layout, spacing and buttons come from Bootstrap */
+
+:root {
+  --navy: #2d3a63;
+  --blue: #4a5ba8;
+  --light-blue: #eef0f8;
+  --bs-body-font-family: 'Inter', Arial, sans-serif;
+  --bs-body-color: #333a4d;
+  --bs-body-font-size: 14px;
+}
+
+/* Top bar */
+.topbar {
+  background-color: var(--navy);
+}
+
+.topbar-phone {
+  border-left: 1px solid #8791b3;
+}
+
+.social a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Logo image (navbar and footer) */
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Navbar */
+.navbar .nav-link {
+  color: #222;
+}
+
+/* Hero */
+.hero {
+  height: 215px;
+  background-image: linear-gradient(rgba(45, 58, 99, 0.75), rgba(45, 58, 99, 0.75)), url('images/properties.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Toolbar tabs */
+.tabs .nav-link {
+  color: #7b8194;
+  padding: 0 0 0 28px;
+}
+
+.tabs .nav-link.active {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Property cards */
+.property-card {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(45, 58, 99, 0.1);
+}
+
+.property-card .card-img-top {
+  height: 215px;
+  object-fit: cover;
+  background-color: #cfd5e6;
+}
+
+.price {
+  color: var(--blue);
+  font-size: 17px;
+}
+
+.actions .btn {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-blue);
+  color: var(--blue);
+  border-radius: 3px;
+}
+
+.actions .btn:hover {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+/* Pagination - override Bootstrap colours */
+.pagination {
+  --bs-pagination-color: var(--blue);
+  --bs-pagination-bg: var(--light-blue);
+  --bs-pagination-border-width: 0;
+  --bs-pagination-hover-color: #fff;
+  --bs-pagination-hover-bg: var(--blue);
+  --bs-pagination-active-bg: var(--blue);
+  --bs-pagination-active-border-color: var(--blue);
+  --bs-pagination-focus-color: var(--blue);
+  --bs-pagination-focus-bg: var(--light-blue);
+}
+
+.pagination .page-link {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+/* Footer */
+.footer-text {
+  max-width: 280px;
+}
+
+.footer-links li {
+  margin-bottom: 14px;
+}
+
+.footer-links a {
+  color: #7b8194;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--blue);
+}
+
+.social-box a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-blue);
+  color: var(--blue);
+  border-radius: 3px;
+}
