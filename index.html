@@ -55,23 +55,53 @@
     </div>
   </header>
 
-  <!-- SEARCH BOX -->
-  <div class="search-box">
-    <div class="search-item">
-      <h4>Locations</h4>
-      <p>Select your city</p>
-    </div>
-    <div class="search-item">
-      <h4>Property Type</h4>
-      <p>Select property type</p>
-    </div>
-    <div class="search-item">
-      <h4>Rent Range</h4>
-      <p>Select rent range</p>
-    </div>
-    <button class="btn">Search</button>
+<!-- SEARCH BOX -->
+<div class="search-wrap">
+
+  <div class="search-tabs">
+    <button class="tab active">Rent</button>
+    <button class="tab">Sale</button>
   </div>
 
+  <div class="search-box">
+    <div class="search-item">
+      <label for="location">Locations</label>
+      <select id="location">
+        <option value="">Select your city</option>
+        <option>Washington</option>
+        <option>Franklin</option>
+        <option>Clinton</option>
+        <option>Arlington</option>
+        <option>Centerville</option>
+      </select>
+    </div>
+
+    <div class="search-item">
+      <label for="type">Property Type</label>
+      <select id="type">
+        <option value="">Select property type</option>
+        <option>House</option>
+        <option>Apartment</option>
+        <option>Villa</option>
+        <option>Office</option>
+      </select>
+    </div>
+
+    <div class="search-item">
+      <label for="rent">Rent Range</label>
+      <select id="rent">
+        <option value="">Select rent range</option>
+        <option>$0 - $500</option>
+        <option>$500 - $1,000</option>
+        <option>$1,000 - $2,000</option>
+        <option>$2,000+</option>
+      </select>
+    </div>
+
+    <button class="search-btn">Search</button>
+  </div>
+
+</div>
   <!-- PROPERTIES BY AREA -->
   <section class="section">
     <h2>Properties by Area</h2>
