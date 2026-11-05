@@ -129,7 +129,50 @@
 .footer-links a:hover {
   color: var(--blue);
 }
+  /* footer: keeps the same 4 columns in one row (fixed layout) */
+  .footer {
+    flex-wrap: nowrap;        /* columns never drop to the next line */
+    justify-content: space-between;
+    gap: 10px;
+    padding: 30px 12px;
+  }
 
+  .footer-col {
+    flex: 1;                  /* all columns share the width */
+    min-width: 0;
+    width: auto;
+  }
+
+  .footer-col:first-child {
+    flex: 1.4;                /* contact column is a little wider */
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    margin: 8px 0 10px;
+  }
+
+  .footer-col p {
+    font-size: 9px;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;  /* long email wraps inside its column */
+  }
+
+  .footer-col .logo img {
+    height: 18px;
+  }
+
+  .footer .social {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .footer .social a {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  
 .social-box a {
   width: 44px;
   height: 44px;

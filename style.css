@@ -161,7 +161,8 @@ h2 {
 
 /* White box: 3 items + button in one row */
 .search-box {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;   /* 3 items + button */
   align-items: center;
   padding: 28px 40px;
   background: #fff;
@@ -748,8 +749,7 @@ input[type="radio"],
   /* 2 boxes per row */
   .area-box,
   .card,
-  .service-box,
-  .footer-col {
+  .service-box {
     width: 48%;
   }
 
@@ -759,10 +759,6 @@ input[type="radio"],
 
   .service-list {
     flex-wrap: wrap;
-  }
-
-  .footer {
-    justify-content: flex-start;
   }
 }
 
@@ -820,13 +816,92 @@ input[type="radio"],
   /* 1 box per row */
   .area-box,
   .area-big,
-  .card,
-  .service-box,
-  .footer-col {
+  .card {
     width: 100%;
+  }
+
+  /* service boxes: 2 x 2 grid with even spacing */
+  .service-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .service-box {
+    width: auto;
+    min-width: 0;
+    padding: 20px 16px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-icon {
+    width: auto;
+    height: 32px;
+    margin-bottom: 14px;
+  }
+
+  .service-box h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .service-box p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .service-box a {
+    font-size: 12px;
   }
 
   .cta {
     padding: 60px 20px;
+  }
+
+  /* footer: keeps the same 4 columns in one row (fixed layout) */
+  .footer {
+    flex-wrap: nowrap;        /* columns never drop to the next line */
+    justify-content: space-between;
+    gap: 10px;
+    padding: 30px 12px;
+  }
+
+  .footer-col {
+    flex: 1;                  /* all columns share the width */
+    min-width: 0;
+    width: auto;
+  }
+
+  .footer-col:first-child {
+    flex: 1.4;                /* contact column is a little wider */
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    margin: 8px 0 10px;
+  }
+
+  .footer-col p {
+    font-size: 9px;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;  /* long email wraps inside its column */
+  }
+
+  .footer-col .logo img {
+    height: 18px;
+  }
+
+  .footer .social {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .footer .social a {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
   }
 }
