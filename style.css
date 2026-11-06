@@ -250,20 +250,19 @@ h2 {
   margin-top: 30px;
 }
 
-/* ---------- AREAS ---------- */
+/* ---------- AREAS (grid) ---------- */
 .area-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* 3 equal columns */
+  grid-auto-rows: 150px;                   /* every row is 150px high */
   gap: 15px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .area-box {
-  position: relative;      /* so the image and pin can sit inside the box */
+  position: relative;        /* the image, layer, pin and button sit inside */
   overflow: hidden;
-  width: 32%;
-  height: 150px;
   background-color: #5b6c9c; /* shows if the image is missing */
   color: white;
   padding: 15px;
@@ -271,8 +270,9 @@ h2 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Arlington takes 2 columns */
 .area-big {
-  width: 66%;
+  grid-column: span 2;
 }
 
 /* the image fills the whole box */
@@ -283,9 +283,10 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s;
 }
 
-/* dark blue layer on top of the image so the text is readable */
+/* dark blue layer on top of the image */
 .area-box::after {
   content: "";
   position: absolute;
@@ -294,13 +295,12 @@ h2 {
   width: 100%;
   height: 100%;
   background: rgba(40, 50, 110, 0.4);
+  transition: background 0.3s;
 }
 
-/* text goes above the image and the dark layer */
+/* text goes above the image and the layer */
 .area-box h3,
-.area-box p,
-.area-box .pin,
-.area-box .view-btn {
+.area-box p {
   position: relative;
   z-index: 1;
 }
@@ -310,27 +310,49 @@ h2 {
   margin-top: 8px;
 }
 
-/* location icon at the bottom left */
+/* location icon: bottom left */
 .area-box .pin {
   position: absolute;
+  z-index: 1;
   left: 15px;
   bottom: 12px;
   font-size: 14px;
   filter: brightness(0) invert(1);
 }
 
-/* "View Detail" button in the middle of the big box */
+/* "View Detail" button: center, hidden until hover */
 .area-box .view-btn {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 10px 22px;
   background: rgba(255, 255, 255, 0.15);
   color: white;
   border: 1px solid white;
-  padding: 10px 22px;
   font-size: 12px;
   cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s, background 0.3s, color 0.3s;
+}
+
+/* hover effects */
+.area-box:hover .view-btn {
+  opacity: 1;
+}
+
+.area-box:hover img {
+  transform: scale(1.1);
+}
+
+.area-box:hover::after {
+  background: rgba(40, 50, 110, 0.65);
+}
+
+.area-box .view-btn:hover {
+  background: #2d3a63;
+  color: #fff;
 }
 
 /* ---------- SERVICES ---------- */
